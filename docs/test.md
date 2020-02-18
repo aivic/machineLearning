@@ -46,13 +46,13 @@ To build a pivot chart, the very first thing you need to do is to construct a Pi
 | Master's (Engg)          |             251555 |                   76000 |               17000 |
 | **Grand Total**              |            1668555 |                  314000 |               80000 |
 
-Next, to build any of the pivot charts on the given PivotTable, you first need to select those columns which you need to visualize and then in the menu bar click on `Insert` and then click on the **PivotChart** icon. This will popup a new dialogue box with the name `Insert Chart`. Now, you can select any of the given charts to plot your selected data.
+Next, to build any of the pivot charts on the given PivotTable, you first need to select those columns which you need to visualize and then in the menu bar click on `Insert` and then click on the **PivotChart** icon. This will popup a new dialog box with the name `Insert Chart`. Now, you can select any of the given charts to plot your selected data.
 
 ## 1. Bar Chart
-If you are dealing with numerical data then bar charts are the very first visualization tool that comes to mind. There are a variety of bar charts that can help you summarise numerical data and further let you know their relative importance. To get a brief understanding of how bar charts work you can visit the bar chart [webpage](https://www.investopedia.com/terms/b/barchart.asp) on the Investopedia website. 
+If you are dealing with numerical data then bar charts are the very first visualization tool that comes to mind. There are a variety of bar charts that can help you summarise numerical data and further let you know their relative importance. To get a brief understanding of how bar charts work, you can visit the bar chart [webpage](https://www.investopedia.com/terms/b/barchart.asp) on the Investopedia website. 
 
 We will now learn how to make a variety of bar charts on the pivot table described in the above section. 
-If you are in the `Insert Chart` popup dialogue box you can click on the `Bar` tab which will show you six types of bar charts. Mainly there are only three kinds of these charts namely clustered, stacked and 3D; the remaining are merely the combination of these three charts with the inclusion of a hundred percent stacked theme.
+If you are in the `Insert Chart` popup dialog box you can click on the `Bar` tab which will show you six types of bar charts. Mainly there are only three kinds of these charts namely clustered, stacked and 3D; the remaining are merely the combination of these three charts with the inclusion of a hundred percent stacked theme.
 
 ### Clustered
 ![Imgur](https://i.imgur.com/hFMzd0O.png)
@@ -118,7 +118,7 @@ The follow the given steps to create a scatter plot on this PivotTable data:
 ![Imgur](https://i.imgur.com/0k0BYWx.png)
 
 ## Conclusion
-In this guide, you have learned how to take your first step in building a Pivot Chart. You have observed that there are some restrictions to build specific charts directly using PivotTable data, however, you also learned a bypass way to still visualize such data. In the next following guide, we will learn some of the advanced charts like Stock, Treemap, Histogram, Box & Whisker, Combo etc. 
+In this guide, you have learned how to take your first step in building a Pivot Chart. You have observed that there are some restrictions to build specific charts directly using PivotTable data, however, you also learned a bypass way to still visualize such data. In the next guide, we will learn some of the advanced charts like Stock, Treemap, Histogram, Box & Whisker, Combo etc. 
 
 ## More on Excel
 - [Calculating Cell Values With Formulas](/guides/calculating-cell-values-formulas)
