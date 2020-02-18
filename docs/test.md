@@ -1,10 +1,15 @@
 ## Introduction
-In today's world, we have seen a lot of use cases of Excel in almost all the industries be it Financial Services, IT Services, Automobile, Manufacturing, etc. Excel deals with a large amount of data and finding insights from the data without summarising the information on a chart becomes quite hectic and therefore we require visualization tools in Excel. 
+In today's world, we have seen a lot of use cases of Excel in almost all the industries be it Financial Services, IT Services, Automobile, Manufacturing, etc. Excel deals with a large amount of data and finding insights from the data without summarising the information on a chart becomes quite hectic and therefore a need for visualization tools is undeniable in Excel. 
 
-In the previous [guide](/guides/exploring-data-with-pivottables), you have learned about various aspects of PivotTables with very little emphasis on pivot charts. In this guide, we will further explore the topic and visualize data from the PivotTable using Pivot charts.
+In the previous [guide](/guides/exploring-data-with-pivottables), you have learned about various aspects of PivotTables with very little emphasis on pivot charts. In this series of two guides (beginner and advanced) on Pivot Charts, we will further explore the topic and visualize data from the PivotTable using Pivot charts.
+
+In this beginner guide, you will cover the following plots:
+- Bar Chart
+- Line Chart
+- Scatter Plot
 
 ## Describing Data
-We will be using a data set consisting of data related to colleges situated in various countries, their fee structure and their minimum acceptable test scores (GRE and GMAT). Given below is the original data set which holds eight columns and 10 rows:
+We will be using a dummy data set consisting of data related to colleges situated in various countries, their fee structure and their minimum acceptable test scores (GRE and GMAT). Given below is the original data set which holds eight columns and 10 rows:
 
 |         Country          |                College                |     Program     |  Tuition Fee  | Accommodation Fee | Misc Charges | Min GMAT Score | Min GRE Score |
 |--------------------------|---------------------------------------|-----------------|---------------|------------------|--------------|----------------|---------------|
@@ -19,7 +24,9 @@ We will be using a data set consisting of data related to colleges situated in v
 | Japan                    | The University of Tokyo               | Ph.D.           | $68,000.00    | $55,000.00       | $6,000.00    |                |           314 |
 | Japan                    | Kyoto University                      | Master's (Biz)  | $56,000.00    | $32,000.00       | $8,000.00    |            715 |               |
 
-We will be building various pivot charts based on the given data set.
+We will be building various pivot charts based on the given data set. 
+
+>> The above data set doesn't relate to the actual figures of the mentioned colleges. Please refer to the respective college websites for original information.
 
 ## Pivot Chart Basics
 To build a pivot chart, the very first thing you need to do is to construct a PivotTable. Here we have constructed a PivotTable using column names **Country** and **Program** under the `Rows` section and the sum of tuition fee, accommodation fee and miscellaneous charges under the `Values` section.
@@ -109,3 +116,11 @@ The follow the given steps to create a scatter plot on this PivotTable data:
 5. Now press a few times `OK` and after a bit of change to the `Chart Elements` you can have a scatter plot like this:
 
 ![Imgur](https://i.imgur.com/0k0BYWx.png)
+
+## Conclusion
+In this guide, you have learned how to take your first step in building a Pivot Chart. You have observed that there are some restrictions to build specific charts directly using PivotTable data, however, you also learned a bypass way to still visualize such data. In the next following guide, we will learn some of the advanced charts like Stock, Treemap, Histogram, Box & Whisker, Combo etc. 
+
+## More on Excel
+- [Calculating Cell Values With Formulas](/guides/calculating-cell-values-formulas)
+- [Working with Statistics Functions in Excel](/guides/working-statistics-function-excel)
+- [Working with Finance Functions in Excel](/guides/working-finance-function-excel)
