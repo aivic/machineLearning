@@ -42,3 +42,20 @@ To build a pivot chart, the very first thing you need to do is to construct a Pi
 Next, to build any of the pivot charts on the given PivotTable, you first need to select those columns which you need to visualize and then in the menu bar click on `Insert` and then click on the **PivotChart** icon. This will popup a new dialogue box with the name `Insert Chart`. Now, you can select any of the given charts to plot your selected data.
 
 ## Bar Chart
+If you are dealing with numerical data then bar charts are the very first visualization tool that comes to mind. There are a variety of bar charts that can help you summarise numerical data and further let you know their relative importance. To get a brief understanding of how bar charts work you can visit the bar chart [webpage](https://www.investopedia.com/terms/b/barchart.asp) on the Investopedia website. 
+
+We will now learn how to make a variety of bar charts on the pivot table described in the above section. 
+If you are in the `Insert Chart` popup dialogue box you can click on the `Bar` tab which will show you six types of bar charts. Mainly there are only three kinds of these charts namely clustered, stacked and 3D; the remaining are merely the combination of these three charts with the inclusion of a hundred percent stacked theme.
+
+### Clustered
+![Imgur](https://i.imgur.com/hFMzd0O.png)
+
+### 100% Stacked Column
+![Imgur](https://i.imgur.com/KRFTVpK.png)
+
+### 3-D 100% Stacked Column
+![Imgur](https://i.imgur.com/1ELyGX2.png)
+
+You can use any of the above three charts or the remaining three charts to analyze the given PivotTable data. As you can observe the bar charts have made it very clear as to which program in which country has the highest and the lowest fee structure in terms of tuition, accommodation and miscellaneous charges.
+
+You can also control the **Chart Elements** Axes, Axis Title, Chart Title, Data Labels, Data Table, Gridlines and Legend using the **`+`** sign available outside the chart.
