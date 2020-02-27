@@ -49,4 +49,9 @@ Once you enter the value, press `Enter` and the changes will reflect in the char
 
 ![Imgur](https://i.imgur.com/wXYE0Vh.png)
 
-As you can observe, this time there are only two values which lie in the range of `[6000, 12000]`.
+As you can observe, this time there are only two values which lie in the range of `[6000, 12000]`. Moving ahead, in our current case we have only four values and three bars which makes it easy to analyze the skewness (to be discussed thoroughly in the next section) in the data. However, when we have hundreds of bars in a histogram it is recommended to draw a `Pareto Line` over the bars which can provide a general idea about how data is distributed. To draw a histogram with a Pareto Line, choose the following icon:
+
+![Imgur](https://i.imgur.com/HDJ6pya.png)
+
+
+## 2. Box and Whisker
