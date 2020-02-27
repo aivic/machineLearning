@@ -2,7 +2,7 @@
 In our previous [guide](), we learned basic charts which can be drawn using the PivotTable data. In this guide, we will continue where we left and learn to build the following charts:
 1. Histogram
 2. Box and Whisker
-3. Treemap
+3. Treemap and Sunburst
 4. Combo
 
 ## 1. Histogram
@@ -151,3 +151,38 @@ The normalized values of the Misc Charges and Tuition Fee along with the final b
 As we can observe, normalization has made it easy to understand the data distribution in each of the numerical column. 
 
 Note - A grouped box plot can alter the actual data distribution a bit. It is suggested to use grouped box plot only for a general overview.
+
+## 3. Treemap and Sunburst
+When you need to show relative proportion in various categories you can use either a Treemap plot (based on rectangles) or a Sunburst plot (based on rings). These plots don't require much explanation die to their self-explanatory behavior. 
+
+To learn how to create in Excel, consider the following PivotTable:
+
+|              Row Labels               | Sum of Tuition Fee |
+|---------------------------------------|--------------------|
+| Brown University                      |              72000 |
+| California Institute of Technology    |              80000 |
+| Harvard University                    |            1010000 |
+| Indian Institute of Technology        |              40000 |
+| Kyoto University                      |              56000 |
+| London Business School                |              72000 |
+| London School of Economics            |              85000 |
+| Massachusetts Institute of Technology |              99555 |
+| The University of Tokyo               |              68000 |
+| University of Cambridge               |              86000 |
+| Grand Total                           |            1668555 |
+
+First, copy the University names along with their Tuition Fee in two separate columns. Select the values and click on Treemap icon as shown below:
+
+![Imgur](https://i.imgur.com/vsN83Ep.png)
+
+This will create the following Treemap:
+
+![Imgur](https://i.imgur.com/73iYgJE.png)
+
+As you can clearly observe, the retangle representing Harvard University is largest in size making it the most expensive university in terms of Tuition Fee among these 10 universities/colleges. The rectangles follow a hierarchy, so after Harvard University, the next most expensive university/college is Massachusetts Institute of Technology, followed by University of Cambridge, and so on.
+
+Similar to Treemap, a Suburst plot does the same purpose except visualizing the items in rings as shown:
+
+![Imgur](https://i.imgur.com/M4vgMt7.png)
+
+Here again hierarchy has been followed based on the Tuition Fee.
