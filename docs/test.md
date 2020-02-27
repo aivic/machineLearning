@@ -186,3 +186,5 @@ Similar to Treemap, a Suburst plot does the same purpose except visualizing the 
 ![Imgur](https://i.imgur.com/M4vgMt7.png)
 
 Here again hierarchy has been followed based on the Tuition Fee.
+
+## 4. Combo
