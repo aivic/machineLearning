@@ -188,3 +188,53 @@ Similar to Treemap, a Suburst plot does the same purpose except visualizing the 
 Here again hierarchy has been followed based on the Tuition Fee.
 
 ## 4. Combo
+So far, we have covered a lot of charts in this series of two guides. But, have you noticed that all the charts that we have created aren't mixed with other charts to form a combo?
+
+In this section, you will learn how to mix multiple charts at visualize them on a same plot. To start, we consider the given PivotTable:
+
+|              Row Labels               | Sum of Tuition Fee | Sum of Accomodation Fee | Sum of Misc Charges |
+|---------------------------------------|--------------------|-------------------------|---------------------|
+| Brown University                      |              72000 |                   22000 |                3000 |
+| California Institute of Technology    |              80000 |                   20000 |                5000 |
+| Harvard University                    |            1010000 |                   42000 |               18000 |
+| Indian Institute of Technology        |              40000 |                   15000 |                2000 |
+| Kyoto University                      |              56000 |                   32000 |                8000 |
+| London Business School                |              72000 |                   20000 |                8000 |
+| London School of Economics            |              85000 |                   18000 |                9000 |
+| Massachusetts Institute of Technology |              99555 |                   34000 |                9000 |
+| The University of Tokyo               |              68000 |                   55000 |                6000 |
+| University of Cambridge               |              86000 |                   56000 |               12000 |
+| Grand Total                           |            1668555 |                  314000 |               80000 |
+
+If you try to build a column chart on the above PivotTable then you get this:
+
+![Imgur](https://i.imgur.com/8Xn6igU.png)
+
+You can observe how difficult it is to analyze the smaller values due to outliers in our data. Again, you can solve this problem either by normalizing the data, using stacked charts or follow the Combo charts. 
+
+What if you create the column charts for only **Accomodation Fee** and **Misc Charges** whereas a line chart for **Tuition Fee**?
+
+Let us see if that bring any major change!
+
+Copy all three numerical column data in three separate columns, select these values, click on `Combo` icon and select `Create Custom Combo Chart...`. This opens up the following dialog box:
+
+![Imgur](https://i.imgur.com/txntN2n.png)
+
+You need to make sure that **Tuition Fee** is plotted on the secondary axis (check the tick) as a line chart. Therefore, select a `Line` chart against **Tuition Fee**. Next, we leave **Accomodation Fee** untouched and change **Misc Charges** to `Column` chart and remove the tick from secondary axis in-front of it. The final modification should look like this:
+
+![Imgur](https://i.imgur.com/qEZ9sCx.png)
+
+Once done, click `OK` and you will receive the Combo Chart as shown:
+
+![Imgur](https://i.imgur.com/TyyuslT.png)
+
+As you can observe, Combo chart has made it very clear to identify values corresponding to each of the three data columns.
+
+## Conclusion
+In this series of two guide, you have covered various types of PivotChart, their use-cases and learned their implementations.
+
+## More on Excel
+- [Exploring Data with PivotTables](/guides/exploring-data-with-pivottables)
+- [Working with Lookup Functions in Excel](/guides/working-with-lookup-functions-excel)
+- [Formatting Excel Worksheets and Cells](/guides/formatting-excel-worksheets-cells)
+- [Excel Logic Function Playbook](/guides/working-with-logical-functions-in-excel)
