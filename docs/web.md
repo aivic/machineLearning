@@ -115,6 +115,8 @@ In the above image, you can observe two red rectangles:
 1. **The left red rectangle**: It depicts the CSS for course name
 2. **The right red rectangle**: It depicts the CSS for all these four entities
 
+Notice that you need to put selector which is visible in the L.H.S. rectangle. There is only a slight difference between the both rectangle contents. The R.H.S has spaces and no `div.` initially. So if you replace all the spaces with a period and prefix the selector with `div.`, you get the content which is present in your L.H.S and the one which is required in the code.
+
 Now, let us code with these CSS selectors:
 
 
@@ -143,46 +145,22 @@ duration <- html_nodes(driver, "div.course--item__list.course-item__duration") %
 
 # Creating a final DataFrame
 courses <- data.frame(titles, authors, level, duration)
+
+# First 10 rows
+#   titles									                                              authors			      level		    duration
+# 1	Understanding Machine Learning						                            David Chappell		Beginner	       43m
+# 2	Understanding Machine Learning with R					                        Jerry Kurata		  Beginner	    1h 25m
+# 3	Scalable Machine Learning with the Microsoft Machine Learning Server	Shawn Hainsworth	Advanced	    2h 21m
+# 4	Preparing Data for Machine Learning					                          Janani Ravi		    Beginner	    3h 24m
+# 5	Understanding Machine Learning with Python				                    Jerry Kurata		  Beginner	    1h 54m
+# 6	Production Machine Learning Systems					                          Google Cloud		  Advanced	    3h 18m
+# 7	Machine Learning: Executive Briefing					                        Simon Allardice		Beginner	       40m
+# 8	Designing a Machine Learning Model					                          Janani Ravi		    Intermediate	3h 25m
+# 9	Machine Learning for Business Professionals				                    Google Cloud		  Beginner	    5h 24m
+# 10	How Machine Learning Works						                              Paolo Perrotta		Beginner	    2h 23m
 ```
 
-The DataFrame `courses` results in the given output:
-
-|    |                                        titles                                        |        authors        |    level     | duration |
-|----|--------------------------------------------------------------------------------------|-----------------------|--------------|----------|
-|  1 | Understanding Machine Learning                                                       | David Chappell        | Beginner     | 43m      |
-|  2 | Understanding Machine Learning with R                                                | Jerry Kurata          | Beginner     | 1h 25m   |
-|  3 | Scalable Machine Learning with the Microsoft Machine Learning Server                 | Shawn Hainsworth      | Advanced     | 2h 21m   |
-|  4 | Preparing Data for Machine Learning                                                  | Janani Ravi           | Beginner     | 3h 24m   |
-|  5 | Understanding Machine Learning with Python                                           | Jerry Kurata          | Beginner     | 1h 54m   |
-|  6 | Production Machine Learning Systems                                                  | Google Cloud          | Advanced     | 3h 18m   |
-|  7 | Machine Learning: Executive Briefing                                                 | Simon Allardice       | Beginner     | 40m      |
-|  8 | Designing a Machine Learning Model                                                   | Janani Ravi           | Intermediate | 3h 25m   |
-|  9 | Machine Learning for Business Professionals                                          | Google Cloud          | Beginner     | 5h 24m   |
-| 10 | How Machine Learning Works                                                           | Paolo Perrotta        | Beginner     | 2h 23m   |
-| 11 | Build, Train, and Deploy Machine Learning Models with AWS SageMaker                  | Jorge Vasquez         | Advanced     | 2h 41m   |
-| 12 | Creating Machine Learning Models                                                     | Janani Ravi           | Intermediate | 2h 44m   |
-| 13 | Deploying Machine Learning Solutions                                                 | Janani Ravi           | Advanced     | 3h 6m    |
-| 14 | Advanced Machine Learning with ENCOG                                                 | Abhishek Kumar        | Advanced     | 4h 11m   |
-| 15 | Machine Learning Simplified: From Ideation to Deployment with Azure Machine Learning | Microsoft Ignite 2019 | Beginner     | 55m      |
-| 16 | Launching into Machine Learning                                                      | Google Cloud          | Intermediate | 3h 19m   |
-| 17 | How Google Does Machine Learning                                                     | Google Cloud          | Intermediate | 3h 20m   |
-| 18 | Modeling with AWS Machine Learning                                                   | Saravanan Dhandapani  | Advanced     | 2h 13m   |
-| 19 | Introduction to Machine Learning with ENCOG 3                                        | Abhishek Kumar        | Intermediate | 2h 19m   |
-| 20 | Play by Play: Machine Learning Exposed                                               | Katharine Beaumont    | Beginner     | 2h 52m   |
-| 21 | Getting Started with Azure Machine Learning                                          | Jerry Kurata          | Beginner     | 2h 14m   |
-| 22 | Building Your First Machine Learning Solution                                        | Mohammed Osman        | Beginner     | 2h 41m   |
-| 23 | How to Think About Machine Learning Algorithms                                       | Swetha Kolalapudi     | Beginner     | 3h 9m    |
-| 24 | Data Wrangling with Pandas for Machine Learning Engineers                            | Mike West             | Beginner     | 1h 1m    |
-| 25 | Machine Learning with XGBoost Using scikit-learn in Python                           | Mike West             | Intermediate | 1h 34m   |
-| 26 | Machine Learning on Android Demystified                                              | droidcon SF           | Intermediate | 39m      |
-| 27 | Machine Learning and Microsoft Cognitive Services                                    | Janani Ravi           | Beginner     | 2h 15m   |
-| 28 | Smart Analytics, Machine Learning, and AI on GCP                                     | Google Cloud          | Intermediate | 1h 40m   |
-| 29 | Building End-to-end Machine Learning Workflows with Kubeflow                         | Abhishek Kumar        | Beginner     | 3h 31m   |
-| 30 | Building Machine Learning Models in Spark 2                                          | Janani Ravi           | Intermediate | 3h 27m   |
-
-d
-
-
+Before you move on to the next section, notice that initially the image depicted only six courses and a **Show more** button. However, our method scraped all of the available courses which are even present inside the **Show more** button.  
 
 
 
