@@ -147,30 +147,17 @@ duration <- html_nodes(driver, "div.course--item__list.course-item__duration") %
 courses <- data.frame(titles, authors, level, duration)
 
 # First 10 rows
-#   titles									                                              authors			      level		    duration
-# 1	Understanding Machine Learning						                            David Chappell		Beginner	       43m
-# 2	Understanding Machine Learning with R					                        Jerry Kurata		  Beginner	    1h 25m
-# 3	Scalable Machine Learning with the Microsoft Machine Learning Server	Shawn Hainsworth	Advanced	    2h 21m
-# 4	Preparing Data for Machine Learning					                          Janani Ravi		    Beginner	    3h 24m
-# 5	Understanding Machine Learning with Python				                    Jerry Kurata		  Beginner	    1h 54m
-# 6	Production Machine Learning Systems					                          Google Cloud		  Advanced	    3h 18m
-# 7	Machine Learning: Executive Briefing					                        Simon Allardice		Beginner	       40m
-# 8	Designing a Machine Learning Model					                          Janani Ravi		    Intermediate	3h 25m
-# 9	Machine Learning for Business Professionals				                    Google Cloud		  Beginner	    5h 24m
-# 10	How Machine Learning Works						                              Paolo Perrotta		Beginner	    2h 23m
-
-
-	titles									authors			level		duration
-1	Understanding Machine Learning						David Chappell		Beginner	43m
-2	Understanding Machine Learning with R					Jerry Kurata		Beginner	1h 25m
-3	Scalable Machine Learning with the Microsoft Machine Learning Server	Shawn Hainsworth	Advanced	2h 21m
-4	Preparing Data for Machine Learning					Janani Ravi		Beginner	3h 24m
-5	Understanding Machine Learning with Python				Jerry Kurata		Beginner	1h 54m
-6	Production Machine Learning Systems					Google Cloud		Advanced	3h 18m
-7	Machine Learning: Executive Briefing					Simon Allardice		Beginner	40m
-8	Designing a Machine Learning Model					Janani Ravi		Intermediate	3h 25m
-9	Machine Learning for Business Professionals				Google Cloud		Beginner	5h 24m
-10	How Machine Learning Works						Paolo Perrotta		Beginner	2h 23m
+# titles									authors			level		duration
+# 1	Understanding Machine Learning						David Chappell		Beginner	43m
+# 2	Understanding Machine Learning with R					Jerry Kurata		Beginner	1h 25m
+# 3	Scalable Machine Learning with the Microsoft Machine Learning Server	Shawn Hainsworth	Advanced	2h 21m
+# 4	Preparing Data for Machine Learning					Janani Ravi		Beginner	3h 24m
+# 5	Understanding Machine Learning with Python				Jerry Kurata		Beginner	1h 54m
+# 6	Production Machine Learning Systems					Google Cloud		Advanced	3h 18m
+# 7	Machine Learning: Executive Briefing					Simon Allardice		Beginner	40m
+# 8	Designing a Machine Learning Model					Janani Ravi		Intermediate	3h 25m
+# 9	Machine Learning for Business Professionals				Google Cloud		Beginner	5h 24m
+# 10	How Machine Learning Works						Paolo Perrotta		Beginner	2h 23m
 ```
 
 Before you move on to the next section, notice that initially the image depicted only six courses and a **Show more** button. However, our method scraped all of the available courses which are even present inside the **Show more** button.  
