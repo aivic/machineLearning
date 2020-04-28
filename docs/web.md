@@ -169,7 +169,7 @@ The above section helps us in understanding how we can get entities if we have o
 
 You can observe there are a total of 10 major skills and each has a distinct URL. Ignore the **Browse all courses** section as it redirects back to the same webpage.
 
-Our objective is to provide only one URL to the R program, here *https://www.pluralsight.com/browse* and let the program automatically navigate to each of those 10 skill webpages and extract the all course details as shown:
+Our objective is to provide only one URL to the R program, here *https://www.pluralsight.com/browse* and let the program automatically navigate to each of those 10 skill webpages and extract all course details as shown:
 
 
 ```r
@@ -229,7 +229,7 @@ for (i in 1:10) {
 }
 ```
 
-In the above code, understand the significane of `html_children()` and `html_attr()`. The code has elaborate comments to brief what each command is doing. The output of the above code will be similar to the previous section output but for each skill.
+In the above code, understand the significane of `html_children()` and `html_attr()`. The code has elaborated comments to brief what each command is doing. The output of the above code will be similar to the previous section output and available for each skill.
 
 ## Conclusion
 You have learned how to fetch data directly from table(s), with CSS selector and automatically navigating to multiple pages to retrieve information. For advance web scraping you may want to look into **RSelenium** package.
