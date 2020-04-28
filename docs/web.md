@@ -148,7 +148,7 @@ courses <- data.frame(titles, authors, level, duration)
 The DataFrame `courses` results in the given output:
 
 |    |                                        titles                                        |        authors        |    level     | duration |
-|----|--------------------------------------------------------------------------------------|-----------------------|--------------+----------|
+|----|--------------------------------------------------------------------------------------|-----------------------|--------------|----------|
 |  1 | Understanding Machine Learning                                                       | David Chappell        | Beginner     | 43m      |
 |  2 | Understanding Machine Learning with R                                                | Jerry Kurata          | Beginner     | 1h 25m   |
 |  3 | Scalable Machine Learning with the Microsoft Machine Learning Server                 | Shawn Hainsworth      | Advanced     | 2h 21m   |
