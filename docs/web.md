@@ -93,3 +93,104 @@ topMutualFundHolders
 # 9       Franklin Strategic Series-Franklin Small Cap Growth Fund 1,134,200  Oct 30, 2019 1.08% 20,506,336
 # 10                          Fidelity Stock Selector All Cap Fund 1,018,833  Jan 30, 2020 0.97% 19,755,171
 ```
+
+## Fetching Different Nodes from a Webpage Using CSS Selector
+In the above example, you didn't put any CSS or XPATH element to get the node's value. Now, let us learn this new concept with an example from [Pluralsight Machine Learning Skills](https://www.pluralsight.com/browse/machine-learning) webpage. When you visit this webpage, scroll down a bit and you will see **Top Machine Learning courses** as visible in the image below:
+
+![Imgur](https://i.imgur.com/K23Zc4E.png)
+
+Each course consists of the following entities:
+1. Course's name
+2. Author's name
+3. Difficulty level
+4. Duration
+
+So let us scrape these four entity details using R. But before we jump into the code, understand what all information can be gathered from the DevTools. You can visit [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) for a quick overview.
+
+When you are comfortable in using DevTools, press `Ctrl+Shift+I` or right-click and select `Inspect Element`. Once the DevTools dialog box opens, you can again right-click on any of the element available in the image provided above. This will take you to a screen similar to this:
+
+![Imgur](https://i.imgur.com/NoDGrqV.png)
+
+In the above image, you can observe two red rectangles:
+1. **The left red rectangle**: It depicts the CSS for course name
+2. **The right red rectangle**: It depicts the CSS for all these four entities
+
+Now, let us code with these CSS selectors:
+
+
+```r
+library(rvest)
+
+link <- "https://www.pluralsight.com/browse/machine-learning"
+
+driver <- read_html(link)
+
+# Course Title
+titles <- html_nodes(driver, "div.course-item__title") %>% html_text()
+
+# Removing first two titles which are added from the 
+# Top Machine Learning Paths (a section just above Top Machine Learning courses)
+titles <- titles[3:32]
+
+# Course Authors
+authors <- html_nodes(driver, "div.course--item__list.course-item__author") %>% html_text()
+
+# Course Level
+level <- html_nodes(driver, "div.course--item__list.course-item__level") %>% html_text()
+
+# Course Duration
+duration <- html_nodes(driver, "div.course--item__list.course-item__duration") %>% html_text()
+
+# Creating a final DataFrame
+courses <- data.frame(titles, authors, level, duration)
+```
+
+The DataFrame `courses` results in the given output:
+
+|    |                                        titles                                        |        authors        |    level     | duration |
+|----|--------------------------------------------------------------------------------------|-----------------------|--------------+----------|
+|  1 | Understanding Machine Learning                                                       | David Chappell        | Beginner     | 43m      |
+|  2 | Understanding Machine Learning with R                                                | Jerry Kurata          | Beginner     | 1h 25m   |
+|  3 | Scalable Machine Learning with the Microsoft Machine Learning Server                 | Shawn Hainsworth      | Advanced     | 2h 21m   |
+|  4 | Preparing Data for Machine Learning                                                  | Janani Ravi           | Beginner     | 3h 24m   |
+|  5 | Understanding Machine Learning with Python                                           | Jerry Kurata          | Beginner     | 1h 54m   |
+|  6 | Production Machine Learning Systems                                                  | Google Cloud          | Advanced     | 3h 18m   |
+|  7 | Machine Learning: Executive Briefing                                                 | Simon Allardice       | Beginner     | 40m      |
+|  8 | Designing a Machine Learning Model                                                   | Janani Ravi           | Intermediate | 3h 25m   |
+|  9 | Machine Learning for Business Professionals                                          | Google Cloud          | Beginner     | 5h 24m   |
+| 10 | How Machine Learning Works                                                           | Paolo Perrotta        | Beginner     | 2h 23m   |
+| 11 | Build, Train, and Deploy Machine Learning Models with AWS SageMaker                  | Jorge Vasquez         | Advanced     | 2h 41m   |
+| 12 | Creating Machine Learning Models                                                     | Janani Ravi           | Intermediate | 2h 44m   |
+| 13 | Deploying Machine Learning Solutions                                                 | Janani Ravi           | Advanced     | 3h 6m    |
+| 14 | Advanced Machine Learning with ENCOG                                                 | Abhishek Kumar        | Advanced     | 4h 11m   |
+| 15 | Machine Learning Simplified: From Ideation to Deployment with Azure Machine Learning | Microsoft Ignite 2019 | Beginner     | 55m      |
+| 16 | Launching into Machine Learning                                                      | Google Cloud          | Intermediate | 3h 19m   |
+| 17 | How Google Does Machine Learning                                                     | Google Cloud          | Intermediate | 3h 20m   |
+| 18 | Modeling with AWS Machine Learning                                                   | Saravanan Dhandapani  | Advanced     | 2h 13m   |
+| 19 | Introduction to Machine Learning with ENCOG 3                                        | Abhishek Kumar        | Intermediate | 2h 19m   |
+| 20 | Play by Play: Machine Learning Exposed                                               | Katharine Beaumont    | Beginner     | 2h 52m   |
+| 21 | Getting Started with Azure Machine Learning                                          | Jerry Kurata          | Beginner     | 2h 14m   |
+| 22 | Building Your First Machine Learning Solution                                        | Mohammed Osman        | Beginner     | 2h 41m   |
+| 23 | How to Think About Machine Learning Algorithms                                       | Swetha Kolalapudi     | Beginner     | 3h 9m    |
+| 24 | Data Wrangling with Pandas for Machine Learning Engineers                            | Mike West             | Beginner     | 1h 1m    |
+| 25 | Machine Learning with XGBoost Using scikit-learn in Python                           | Mike West             | Intermediate | 1h 34m   |
+| 26 | Machine Learning on Android Demystified                                              | droidcon SF           | Intermediate | 39m      |
+| 27 | Machine Learning and Microsoft Cognitive Services                                    | Janani Ravi           | Beginner     | 2h 15m   |
+| 28 | Smart Analytics, Machine Learning, and AI on GCP                                     | Google Cloud          | Intermediate | 1h 40m   |
+| 29 | Building End-to-end Machine Learning Workflows with Kubeflow                         | Abhishek Kumar        | Beginner     | 3h 31m   |
+| 30 | Building Machine Learning Models in Spark 2                                          | Janani Ravi           | Intermediate | 3h 27m   |
+
+d
+
+
+
+
+
+
+
+
+
+
+
+
+
