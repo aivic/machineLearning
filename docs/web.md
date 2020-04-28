@@ -115,7 +115,7 @@ In the above image, you can observe two red rectangles:
 1. **The left red rectangle**: It depicts the CSS for course name
 2. **The right red rectangle**: It depicts the CSS for all these four entities
 
-Notice that you need to put selector which is visible in the L.H.S. rectangle. There is only a slight difference between the both rectangle contents. The R.H.S has spaces and no `div.` initially. So if you replace all the spaces with a period and prefix the selector with `div.`, you get the content which is present in your L.H.S and the one which is required in the code.
+Notice that in the code you need to put selector which is visible in the L.H.S. rectangle. There is a slight difference between both rectangle contents. The R.H.S has spaces and has no `div.` initially. So if you replace all the spaces with a period and prefix the selector with `div.`, you get the content which is present in your L.H.S and the one which is required in the code.
 
 Now, let us code with these CSS selectors:
 
