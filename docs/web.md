@@ -162,13 +162,74 @@ courses <- data.frame(titles, authors, level, duration)
 
 Before you move on to the next section, notice that initially the image depicted only six courses and a **Show more** button. However, our method scraped all of the available courses which are even present inside the **Show more** button.  
 
+## Automatic Navigation to Multiple Pages and Fetching Entities 
+The above section helps us in understanding how we can get entities if we have only one webpage devoted to Skills. But PluralSight has a lot more Skills than just Machine Learning. Look in the image below for major skills taken from this [URL](https://www.pluralsight.com/browse):
+
+![Imgur](https://i.imgur.com/JqCL45O.png)
+
+You can observe there are a total of 10 major skills and each has a distinct URL. Ignore the **Browse all courses** section as it redirects back to the same webpage.
+
+Our objective is to provide only one URL to the R program, here *https://www.pluralsight.com/browse* and let the program automatically navigate to each of those 10 skill webpages and extract the all course details as shown:
 
 
+```r
+library(rvest)
+library(stringr) # For data cleaning
+
+link <- "https://www.pluralsight.com/browse"
+
+driver <- read_html(link)
+
+# Extracting sub URLs
+# Here, tile-box is a parent class which holds the content in the nested class.
+# We first go inside the sub-class using html_children() and then fetch the URLs to each Skill page
+subURLs <- html_nodes(driver,'div.tile-box') %>% 
+            html_children() %>% 
+            html_attr('href')
+
+# Removing NA values and last `/browse` URL
+subURLs <- subURLs[!is.na(subURLs)][1:10]
+
+# Main URL - to complete the above URLs
+mainURL <- "https://www.pluralsight.com"
+
+# This function fetch the those four entities as we have learned in the previous section of this guide
+entity <- function(s){
+  
+  # Course Title
+  # Since Number of Courses may differ from Skill to Skill, therefore,
+  # we have done dynamic fetching of the course names
+  
+  v <- html_nodes(s, "div.course-item__info") %>%
+    html_children() 
+  
+  titles <- gsub("<|>", "", str_extract(v[!is.na(str_match(v, "course-item__title"))], ">.*<"))
+  
+  # Course Authors
+  authors <- html_nodes(s, "div.course--item__list.course-item__author") %>% html_text()
+  
+  # Course Level
+  level <- html_nodes(s, "div.course--item__list.course-item__level") %>% html_text()
+  
+  # Course Duration
+  duration <- html_nodes(s, "div.course--item__list.course-item__duration") %>% html_text()
+  
+  # Creating a final DataFrame
+  courses <- data.frame(titles, authors, level, duration)
+  
+  return(courses)
+}
 
 
+# A for loop which goes through all the URLs, fetch the entities and display them on the screen 
+i = 1
+for (i in 1:10) {
+  subDriver <- read_html(paste(mainURL, subURLs[i], sep = ""))
+  print(entity(subDriver))
+}
+```
 
+In the above code, understand the significane of `html_children()` and `html_attr()`. The code has elaborate comments to brief what each command is doing. The output of the above code will be similar to the previous section output but for each skill.
 
-
-
-
-
+## Conclusion
+You have learned how to fetch data directly from table(s), with CSS selector and automatically navigating to multiple pages to retrieve information. For advance web scraping you may want to look into **RSelenium** package.
