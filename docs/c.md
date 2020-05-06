@@ -4,7 +4,7 @@ You finished watching a Sci-Fi movie in which the protogonist develops a humanoi
 From many ways out there, web scraping provides one of the path to get such information. To get you started - let us learn different angles of fetching data from the web using R. 
 
 ## Fetching Data from a Single Table or Multiple Tables Available on a HTML Webpage
-[Yahoo! Finance](https://finance.yahoo.com/) consists of stock market data of equities, commodities, futures, etc. Once you land on this webpage, search for `PluralSight` or `PS` in the search box available on the right hand side of the webpage. This will open up the webpage dedicated to the stock market data for PS. Since the webpage provides you an upfront option to download the historical data; there is no need to scrape it. But, what about the company holders? 
+[Yahoo! Finance](https://finance.yahoo.com/) consists of stock market data of equities, commodities, futures, etc. Once you land on this webpage, search for `Pluralsight` or `PS` in the search box available on the right hand side of the webpage. This will open up the webpage dedicated to the stock market data for PS. Since the webpage provides you an upfront option to download the historical data; there is no need to scrape it. But, what about the company holders? 
 
 Click on the **Holders** tab which will list out three sections:
 1. Major Holders
@@ -98,7 +98,7 @@ topMutualFundHolders
 You can learn about fetching data using CSS selector from my [blog](https://github.com/chhayawagmi/blogs/blob/master/R-CSS-Selector.md) available at GitHub.
 
 ## Automatic Navigation to Multiple Pages and Fetching Entities 
-The above section helps us in understanding how we can get entities if we have only one webpage devoted to Skills. But PluralSight has a lot more Skills than just Machine Learning. Look in the image below for major skills taken from this [URL](https://www.pluralsight.com/browse):
+The above section helps us in understanding how we can get entities if we have only one webpage devoted to Skills. But Pluralsight has a lot more Skills than just Machine Learning. Look in the image below for major skills taken from this [URL](https://www.pluralsight.com/browse):
 
 ![Imgur](https://i.imgur.com/JqCL45O.png)
 
