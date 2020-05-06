@@ -166,5 +166,66 @@ for (i in 1:10) {
 
 In the above code, understand the significane of `html_children()` and `html_attr()`. The code has elaborated comments to brief what each command is doing. The output of the above code will be similar to the previous section output and available for each skill.
 
+## Controlling Browser from R and Scraping Data 
+Consider you want to scrape the latest Google News about Pluralsight. Manually, you would open *www.google.com* and search for the keyword *Pluralsight* and later click on *News* section. This would deliver you a page like this:
+
+![Imgur](https://i.imgur.com/I5T3hWl.png)
+
+What if I tell you all these steps can be automated and you can fetch the latest news just by a small R sript! 
+
+**Note** - Before proceeding with R code, make sure you follow the given steps to establish Docker in your system.
+1. Download and install [Docker](https://download.docker.com/win/stable/DockerToolbox.exe)
+2. Open Docker Terminal and run `docker pull selenium/standalone-chrome`, replace `chrome` with `firefox` if you're a Firefox user
+3. Then `docker run -d -p 4445:4444 selenium/standalone-chrome` 
+4. If above two codes are successful, run `docker-machine ip` and note the IP address to be used in the R code
+
+Given below is an elaborated code using **RSelenium** library:
+
+
+```r
+library(RSelenium)
+
+# Initiate the connection, remember remoteServerAddr needs to be replaced with the IP address you have 
+# received from the Docker Terminal
+driver <- remoteDriver(browserName = "chrome", remoteServerAddr = "192.168.99.100", port = 4445L)
+driver$open()
+
+
+# Provide the URL and let the driver load it for you
+driver$navigate("https://www.google.com/")
+
+
+# The search textarea of the Google falls under the name=q. Call this element.
+init <- driver$findElement(using = 'name', "q")
+
+# Enter the search keyword and hit Enter key
+init$sendKeysToElement(list("Pluralsight", key = "enter"))
+
+
+# Now, we have landed on the page with Pluralsight "All" results. Select the XPATH of the News tab and click it.
+News_tab <- driver$findElement(using = 'xpath', "//*[@id=\"hdtb-msb-vis\"]/div[2]/a")
+News_tab$clickElement()
+
+
+# We are now on the News results. Select the CSS selector for all the news (here, a.l)
+# Don't ignore that we have to use findElements (with s) not findElement. The latter gives only one result.
+res <- driver$findElements(using = 'css selector', 'a.l')
+
+# List out the latest headlines
+headlines <- unlist(lapply(res, function(x){x$getElementText()}))
+headlines
+
+# [1] "Pluralsight has free courses to help you learn Microsoft Azure ..."
+# [2] "Pluralsight offers free access to full portfolio of skill ..."     
+# [3] "Will Pluralsight Continue to Surge Higher?"                        
+# [4] "The CEO of Pluralsight explains why the online tech skills ..."    
+# [5] "Pluralsight Is Free For the Month of April"                        
+# [6] "This Pluralsight deal lets you learn some new skills from home ..."
+# [7] "Pluralsight One Commits Over $1 Million to Strategic Nonprofit ..."
+# [8] "Pluralsight Announces First Quarter 2020 Results"                  
+# [9] "Pluralsight Announces Date for its First Quarter 2020 Earnings ..."
+# [10] "Learn Adobe Photoshop, Microsoft Excel, Python for free with ..."
+```
+
 ## Conclusion
-You have learned how to fetch data directly from table(s), with CSS selector and automatically navigating to multiple pages to retrieve information. For advance web scraping you may want to look into **RSelenium** package.
+You have learned how to fetch data directly from table(s), with CSS selector, automatically navigating to multiple pages to retrieve information and finally controlling web-browser from a script and fetching data using the **RSelenium** library.
